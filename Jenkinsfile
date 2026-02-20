@@ -70,15 +70,14 @@ pipeline {
 
         stage('SonarQube Analysis') {
             steps {
-                // Uses the SonarQube server configuration in Jenkins
-                // (Manage Jenkins -> Configure System -> SonarQube servers)
                 withSonarQubeEnv('sonarqube') {
-                    // Run SonarQube scanner over the whole repo, excluding build artifacts
+                    sh "echo 'Scanner path: ${tool 'sonar-scanner'}'"
+                    sh "ls ${tool 'sonar-scanner'}/bin/"
                     sh """
-                        sonar-scanner \
-                          -Dsonar.projectKey=todo-cicd-pipeline \
-                          -Dsonar.sources=. \
-                          -Dsonar.exclusions=**/node_modules/**,**/dist/**,**/build/** \
+                        ${tool 'sonar-scanner'}/bin/sonar-scanner \
+                        -Dsonar.projectKey=todo-cicd-pipeline \
+                        -Dsonar.sources=. \
+                        -Dsonar.exclusions=**/node_modules/**,**/dist/**,**/build/**
                     """
                 }
             }
