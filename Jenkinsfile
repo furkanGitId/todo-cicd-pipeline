@@ -5,7 +5,7 @@ pipeline {
     tools {
        // sonarQubeScanner 'sonar-scanner'
        'hudson.plugins.sonar.SonarRunnerInstallation' 'sonar-scanner'
-       nodejs 'nodejs-22'
+       nodejs 'nodejs-22.14.0'
     }
 
     environment {
