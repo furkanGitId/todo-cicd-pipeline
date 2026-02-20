@@ -79,7 +79,6 @@ pipeline {
                           -Dsonar.projectKey=todo-cicd-pipeline \
                           -Dsonar.sources=. \
                           -Dsonar.exclusions=**/node_modules/**,**/dist/**,**/build/** \
-                          -Dsonar.login=${SONAR_TOKEN}
                     """
                 }
             }
