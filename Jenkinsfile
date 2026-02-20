@@ -110,7 +110,8 @@ pipeline {
                 // Recreate the full stack (backend + frontend) using docker-compose.
                 // 'down' is made non-fatal so the first run (no containers yet) still succeeds.
                 sh '''
-                    docker-compose -f docker-compose.yml down || true
+                    docker-compose -f docker-compose.yml down --remove-orphans || true
+                    docker rm -f todo-backend todo-frontend || true
                     docker-compose -f docker-compose.yml up -d
                 '''
             }
