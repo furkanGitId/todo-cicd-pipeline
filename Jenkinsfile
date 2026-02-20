@@ -3,7 +3,8 @@ pipeline {
 
     // Make the SonarQube scanner CLI available on the agent
     tools {
-        sonarQubeScanner 'sonar-scanner'
+       // sonarQubeScanner 'sonar-scanner'
+       'hudson.plugins.sonar.SonarRunnerInstallation' 'sonar-scanner'
     }
 
     environment {
