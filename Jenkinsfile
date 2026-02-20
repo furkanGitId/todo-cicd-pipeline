@@ -22,6 +22,20 @@ pipeline {
             }
         }
 
+        stage('Install System Dependencies') {
+            steps {
+                sh '''
+                    sudo apt-get install -y \
+                        build-essential \
+                        unixodbc \
+                        unixodbc-dev \
+                        python3 \
+                        make \
+                        g++
+                '''
+            }
+        }
+
         stage('Verify Tools') {
             steps {
                 sh 'node -v'
