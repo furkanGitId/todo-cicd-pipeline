@@ -5,7 +5,6 @@ pipeline {
     tools {
        // sonarQubeScanner 'sonar-scanner'
        'hudson.plugins.sonar.SonarRunnerInstallation' 'sonar-scanner'
-       nodejs 'nodejs-22.14.0'
     }
 
     environment {
@@ -20,6 +19,13 @@ pipeline {
             steps {
                 // Pull the latest version of this repo from GitHub
                 git url: 'https://github.com/furkanGitId/todo-cicd-pipeline.git', branch: 'main'
+            }
+        }
+
+        stage('Verify Tools') {
+            steps {
+                sh 'node -v'
+                sh 'npm -v'
             }
         }
 
