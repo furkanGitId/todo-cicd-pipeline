@@ -17,10 +17,12 @@ function App() {
     const res = await api.get("/todos");
     setTodos(res.data);
   };
-
+  
   useEffect(() => {
-    loadTodos();
+    // Fetch via callback pattern to satisfy react-hooks/set-state-in-effect
+    api.get("/todos").then((res) => setTodos(res.data));
   }, []);
+  
 
   const addTodo = async () => {
     if (!title.trim()) return;
