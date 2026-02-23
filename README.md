@@ -154,6 +154,11 @@ Jenkins is the heart of our CI/CD process, automating builds, tests, and deploym
     ```
     *   **Beginner Explanation:** After adding a new repository, you need to update your package list so your system knows about the newly available Jenkins packages.
 
+4.  **Install Jenkins:**
+    ```bash
+    sudo apt install jenkins -y
+    ```
+
 4.  **Enable and start the Jenkins service:**
     ```bash
     sudo systemctl enable jenkins
