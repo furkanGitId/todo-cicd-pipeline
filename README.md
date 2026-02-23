@@ -186,6 +186,13 @@ Jenkins is the heart of our CI/CD process, automating builds, tests, and deploym
     ```
     *   **Beginner Explanation:** After Jenkins starts for the first time, it generates a temporary administrator password. This command displays that password, which you'll need to unlock Jenkins in your web browser.
 
+8.  **After install successfully:**
+    ```bash
+    http://localhost:8080
+    ```
+    *   **Beginner Explanation:** Once the service is active, Jenkins usually runs on port 8080. You can access it by opening your browser and going to http://localhost:8080.
+
+
 ### Post-Installation: Installing Jenkins Plugins
 
 Jenkins' functionality can be extended through plugins. After accessing Jenkins in your browser (typically `http://YOUR_SERVER_IP:8080`), you'll be prompted to install plugins. Select the suggested plugins or manually install the following:
